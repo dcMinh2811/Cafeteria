@@ -3,10 +3,6 @@ def Mark(Row, i, left_side, right_side):
     global count
     Row[i] = i+1
     count += 1
-    # print("left side:",left_side)
-    # print("right side:",right_side)
-    print("Dropped:", Row[i])
-    print("end\n\n\n")
 
 def Main(Seats, N, K, M):
     global count
@@ -22,8 +18,6 @@ def Main(Seats, N, K, M):
         for i in range(N):
             if i+1 not in Row:
                 current = Row[i]
-                print("\n\n\ncurrent:",current)
-                print("i:",i)
                 left_side = Row[i-K:i]
                 right_side = Row[i+1:i+K+1]
                 if len(right_side) >= K and i == 0 and right_side == ["-"] * K:
@@ -36,11 +30,6 @@ def Main(Seats, N, K, M):
                     Mark(Row, i, left_side, right_side)
 
                 continue
-
-        print("\n\n\n\n\n------------------------------")
-        print(Row)
-        print("\n")
-        print(count)
 
 while True:
     N = int(input("Enter the amount of seats (N): "))
